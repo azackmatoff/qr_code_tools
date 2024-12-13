@@ -19,31 +19,19 @@ rootProject.allprojects {
         google()
         jcenter()
     }
-
-    subprojects {
-        afterEvaluate { project ->
-            if (project.hasProperty('android')) {
-                project.android {
-                    if (namespace == null) {
-                        namespace project.group
-                    }
-                }
-            }
-        }
-    }
 }
 
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 34
 
     sourceSets {
         main.java.srcDirs += 'src/main/kotlin'
     }
     defaultConfig {
-        minSdkVersion 16
+        minSdkVersion 23
     }
 }
 
